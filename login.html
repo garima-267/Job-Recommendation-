@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+{% block content %}
+<style>
+    label{
+        color: white;
+    }
+    h1{
+        color: white;
+    }
+</style>
+<form method="POST" class="w-30 p-3 mx-auto col-10 col-md-8 col-lg-6" >
+    <h1 align="Center">LOGIN</h1>
+        <div class="form-group">
+            <label for="uname">Username: </label>
+            <input type="text" class="form-control" name="uname" id="uname" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password: </label>
+            <input type="password" class="form-control" name="password1" id="password1" placeholder="Enter password">
+        </div>
+
+       <button type="submit" class="btn btn-primary" href="/form">LOGIN</button>
+       <br><br><br><br>
+</form>
+{% endblock %}

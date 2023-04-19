@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+ {% block content%}
+    <style>
+      *{
+        color: white;
+      }
+    </style>
+    
+    <div class="container" style="margin-top: 50px;">
+      <div class="row">
+          <div style="margin-top: 20px;" class="col-lg-6">
+              <h1 style="padding: .375rem .375rem;">Enter Your Skills</h1>
+              <form action = "http://localhost:5000/" method = "POST">
+                  <div style="padding: .375rem .375rem;" class="form-group">
+                      <label for="cds">Rate youself on your coding skills.</label>
+                      <input name="cds" type="text" class="form-control">
+                  </div>
+                  <div style="padding: .375rem .375rem;" class="form-group">
+                      <label for="ps">Rate youself on your problem solving skills.</label>
+                      <input name="ps" type="text" class="form-control">
+                  </div>
+                  <div style="padding: .375rem .375rem;" class="form-group">
+                      <label for="dsa">How much fluent are you with data structures and algorithms ?</label>
+                      <input name="dsa" type="text" class="form-control">
+                  </div>
+                  <div style="padding: .375rem .375rem;" class="form-group">
+                      <label for="dbms">Rate yourself on your database management skills.</label>
+                      <input name="dbms" type="text" class="form-control">
+                  </div>
+                  <div style="padding: .375rem .375rem;" class="form-group">
+                      <label for="lsp">Evaluate your logical and statistical programming skills.</label>
+                      <input name="lsp" type="text" class="form-control">
+                  </div>
+                  <div style="padding: .375rem .375rem;" class="form-group">
+                      <label for="com">How much confident are you about your communication sills ?</label>
+                      <input name="com" type="text" class="form-control">
+                  </div>
+                  <div style="padding: .375rem .375rem;" class="form-group">
+                      <label for="pm">Rate yourself on your expertise in presentation and management.</label>
+                      <input name="pm" type="text" class="form-control">
+                  </div>
+                  <div style="padding: .375rem .375rem;" class="form-group">
+                      <label for="act">Quantify your analytical and critical thinking skills ?</label>
+                      <input name="act" type="text" class="form-control">
+                  </div>
+                  <div style="padding: .375rem .375rem;" class="form-group">
+                      <label for="net">Rate youself on your knowledge about networking ?</label>
+                      <input name="net" type="text" class="form-control">
+                  </div>
+                  <div style="padding: .375rem .375rem;" class="form-group">
+                      <label for="cs">Rate yourself on your creative knowledge and skills.</label>
+                      <input name="cs" type="text" class="form-control">
+                  </div>
+                  <div style="padding: .375rem .375rem;" class="form-group">
+                      <label for="candidate">Number of Candidate</label>
+                      <input name="candidate" type="text" class="form-control">
+                  </div>
+                  <div style="padding: .375rem .375rem;" class="form-group">
+                      <button style="padding: .375rem .375rem;" type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+              </form>
+          </div>
+          <div style="margin-top: 20px;" class="col-lg-6">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>Name</th>
+                          <th>Score</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                  {% for key,value in result %}
+                      <tr>
+                          <th class="nr" scope="row">1</th>
+                          <td>{{value}}</td>
+                          <td>{{key}}</td>
+                      </tr>
+                  {% endfor %}
+    
+                  </tbody>
+              </table>
+          </div>
+      </div>
+      <div style="margin-top: 20px;" class="alert alert-danger" role="alert">
+          <strong>Note: </strong>
+          <br>
+          *Enter the requirements rated on scale of 5 and are true integer.
+          <br>
+          *This model uses Euclidian Distance score to recommand user/groups.
+          <br>
+          *Rest other features.
+      </div>          
+    </div>
+  
+    {% endblock %}
+    

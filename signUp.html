@@ -1,0 +1,36 @@
+{% extends "base.html"%}
+{% block content %}
+<style>
+    label{
+        color: white;
+    }
+    h1{
+        color: white;
+    }
+</style>
+<form method="POST" class="w-30 p-3 mx-auto col-10 col-md-8 col-lg-6">
+    <h1 align="Center">SIGN UP</h1>
+        <div class="form-group">
+            <label for="name">Name: </label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="uname">Username: </label>
+            <input type="text" class="form-control" name="uname" id="uname" placeholder="Give yourself a username">
+        </div>
+        <div class="form-group">
+            <label for="email">Email </label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your institute ID">
+        </div>
+        <div class="form-group">
+            <label for="password1">Password: </label>
+            <input type="password" class="form-control" name="password1" id="password1" placeholder="Enter password">
+        </div>
+
+        <div class="form-group">
+            <label for="password2">Confirm Password: </label>
+            <input type="password" class="form-control" name="password2" id="password2" placeholder="Confirm password">
+        </div> 
+    <button type="submit" class="btn btn-primary">SUBMIT</button>
+</form>
+{% endblock %}
